@@ -1,8 +1,5 @@
 package utillity;
-
-
 import java.util.*;
-
 import data.Worker;
 
 /**
@@ -122,7 +119,7 @@ public class CollectionManager {
      *
      * @return Worker with max salary
      */
-    public Worker maxSalary() {
+    public Worker maxSalaryAll() {
         double maxSalary = workersCollection.get(0).getSalary();
         Worker info = workersCollection.get(0);
         for (Worker work : workersCollection) {
@@ -139,7 +136,7 @@ public class CollectionManager {
      *
      * @return Worker with min salary
      */
-    public Worker minSalary() {
+    public Worker minSalaryAll() {
         double minSalary = workersCollection.get(0).getSalary();
         Worker info = workersCollection.get(0);
         for (Worker work : workersCollection) {
@@ -154,7 +151,6 @@ public class CollectionManager {
 
     /**
      * Get the first letters of workers
-     *
      * @return Workers'F.I.O
      */
     public String InitialsToString() {
@@ -170,7 +166,7 @@ public class CollectionManager {
             info += '.';
             info += thirdOfName;
             info += '.';
-            if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n\n";
+            if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n";
         }
         return info;
     }

@@ -15,6 +15,7 @@ import Start.App;
  */
 public class WorkerAsker{
     private final double MIN_SALARY= 0;
+    private final double MIN_Percent = 1;
 
     private Scanner userScanner;
 
@@ -160,9 +161,9 @@ public class WorkerAsker{
                 department=departments.valueOf(strDepartment);
                 break;
             } catch (NoSuchElementException exception) {
-                Console.printerror("Профессия не распознана!");
+                Console.printerror("Отдел не распознан!");
             } catch (IllegalArgumentException exception) {
-                Console.printerror("Профессия нет в списке!");
+                Console.printerror("Отдела нет в списке!");
             } catch (IllegalStateException exception) {
                 Console.printerror("Непредвиденная ошибка!");
                 System.exit(0);

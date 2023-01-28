@@ -31,7 +31,8 @@ public class App {
                     new MaxSalaryCommand(collectionManager),
                     new MinSalaryCommand(collectionManager),
                     new AverageSalaryCommand(collectionManager),
-                    new InitialsCommand(collectionManager)
+                    new InitialsCommand(collectionManager),
+                    new IndexingCommand(collectionManager)
             );
 
 

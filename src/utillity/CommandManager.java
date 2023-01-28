@@ -24,11 +24,14 @@ public class CommandManager {
     private Command minSalaryCommand;
     private Command averageSalaryCommand;
     private Command initialsCommand;
+    private Command indexingCommand;
 
 
     public CommandManager(Command helpCommand, Command showCommand, Command addCommand, Command updateCommand,
                           Command removeByIdCommand, Command exitCommand, Command sumOfSalaryCommand, Command clearCommand,
-                          Command sortCommand, Command maxSalaryCommand, Command minSalaryCommand, Command averageSalaryCommand, Command initialsCommand) {
+                          Command sortCommand, Command maxSalaryCommand, Command minSalaryCommand, Command averageSalaryCommand,
+                          Command initialsCommand, Command indexingCommand
+    ) {
         this.helpCommand = helpCommand;
         this.showCommand = showCommand;
         this.addCommand = addCommand;
@@ -38,11 +41,11 @@ public class CommandManager {
         this.sumOfSalaryCommand = sumOfSalaryCommand;
         this.clearCommand = clearCommand;
         this.sortCommand = sortCommand;
-        this.maxSalaryCommand= maxSalaryCommand;
-        this.minSalaryCommand= minSalaryCommand;
-        this.averageSalaryCommand =averageSalaryCommand;
-        this.initialsCommand= initialsCommand;
-
+        this.maxSalaryCommand = maxSalaryCommand;
+        this.minSalaryCommand = minSalaryCommand;
+        this.averageSalaryCommand = averageSalaryCommand;
+        this.initialsCommand = initialsCommand;
+        this.indexingCommand = indexingCommand;
 
         commands.add(helpCommand);
         commands.add(showCommand);
@@ -56,6 +59,7 @@ public class CommandManager {
         commands.add(minSalaryCommand);
         commands.add(averageSalaryCommand);
         commands.add(initialsCommand);
+        commands.add(indexingCommand);
     }
 
 
@@ -132,6 +136,18 @@ public class CommandManager {
     public boolean removeById(String argument) {
         return removeByIdCommand.execute(argument);
     }
+
+
+    /**
+     * Executes needed command.
+     *
+     * @param argument Its argument.
+     * @return Command exit status.
+     */
+    public boolean indexing(String argument) {
+        return indexingCommand.execute(argument);
+    }
+
 
     /**
      * Executes needed command.

@@ -65,6 +65,9 @@ public class Console {
             case "remove_by_id":
                 if (!commandManager.removeById(userCommand[1])) return 1;
                 break;
+            case "indexing":
+                if (!commandManager.indexing(userCommand[1])) return 1;
+                break;
             case "clear":
                 if (!commandManager.clear(userCommand[1])) return 1;
                 break;
@@ -135,7 +138,7 @@ public class Console {
     /**
      * Prints : toOut.toString() %.2f to Console
      *
-     * @param toOut Error to print
+     * @param toOut Double to print
      */
     public static void printdouble(Object toOut) {
         System.out.printf("%.2f\n", toOut);

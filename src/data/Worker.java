@@ -59,6 +59,10 @@ public class Worker {
         return salary;
     }
 
+    public void setSalary(Long salary) {
+        this.salary= salary;
+    }
+
 
     /**
      * @return Status of the worker.
@@ -75,9 +79,6 @@ public class Worker {
         return department;
     }
 
-    public int compareTo(Worker workObj) {
-        return id.compareTo(workObj.getId());
-    }
 
     @Override
     public String toString() {

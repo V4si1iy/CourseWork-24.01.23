@@ -25,7 +25,7 @@ public class AverageSalaryCommand extends AbstractCommand {
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
             double average_salary = collectionManager.getAverageSalary();
-            if (average_salary == 0) throw new CollectionEmptyException();
+            if (collectionManager.getCollection().isEmpty()) throw new CollectionEmptyException();
             Console.print("Среднее зарплат всех рабочих: ");
             Console.printdouble(average_salary);
             return true;
