@@ -25,12 +25,15 @@ public class CommandManager {
     private Command averageSalaryCommand;
     private Command initialsCommand;
     private Command indexingCommand;
+    private Command greaterThenNumberCommand;
+    private Command lessThenNumberCommand;
 
 
     public CommandManager(Command helpCommand, Command showCommand, Command addCommand, Command updateCommand,
                           Command removeByIdCommand, Command exitCommand, Command sumOfSalaryCommand, Command clearCommand,
                           Command sortCommand, Command maxSalaryCommand, Command minSalaryCommand, Command averageSalaryCommand,
-                          Command initialsCommand, Command indexingCommand
+                          Command initialsCommand, Command indexingCommand, Command greaterThenNumberCommand, Command lessThenNumberCommand
+
     ) {
         this.helpCommand = helpCommand;
         this.showCommand = showCommand;
@@ -46,6 +49,8 @@ public class CommandManager {
         this.averageSalaryCommand = averageSalaryCommand;
         this.initialsCommand = initialsCommand;
         this.indexingCommand = indexingCommand;
+        this.greaterThenNumberCommand=greaterThenNumberCommand;
+        this.lessThenNumberCommand = lessThenNumberCommand;
 
         commands.add(helpCommand);
         commands.add(showCommand);
@@ -60,6 +65,8 @@ public class CommandManager {
         commands.add(averageSalaryCommand);
         commands.add(initialsCommand);
         commands.add(indexingCommand);
+        commands.add(greaterThenNumberCommand);
+        commands.add(lessThenNumberCommand);
     }
 
 
@@ -227,6 +234,26 @@ public class CommandManager {
      */
     public boolean initials(String argument) {
         return initialsCommand.execute(argument);
+    }
+
+    /**
+     * Executes needed command.
+     *
+     * @param argument Its argument.
+     * @return Command exit status.
+     */
+    public boolean greaterThenNumber(String argument) {
+        return greaterThenNumberCommand.execute(argument);
+    }
+
+    /**
+     * Executes needed command.
+     *
+     * @param argument Its argument.
+     * @return Command exit status.
+     */
+    public boolean lessThenNumber(String argument) {
+        return lessThenNumberCommand.execute(argument);
     }
 
     @Override

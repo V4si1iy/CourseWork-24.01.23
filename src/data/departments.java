@@ -1,11 +1,11 @@
 package data;
 
 public enum departments {
-    JavaDevelop,
-    Analytics,
-    FullStackDevelop,
-    PythonDevelop,
-    Designer;
+    JAVADEVELOP,
+    ANALYST,
+    FULLSTACKDEVELOP,
+    PYTHONDEVELOP,
+    DESIGNER;
 
     /**
      * Generates a beautiful list of enum string values.

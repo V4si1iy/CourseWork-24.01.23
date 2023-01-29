@@ -32,7 +32,9 @@ public class App {
                     new MinSalaryCommand(collectionManager),
                     new AverageSalaryCommand(collectionManager),
                     new InitialsCommand(collectionManager),
-                    new IndexingCommand(collectionManager)
+                    new IndexingCommand(collectionManager),
+                    new GreaterThenNumberCommand(collectionManager),
+                    new LessThenNumberCommand(collectionManager)
             );
 
 

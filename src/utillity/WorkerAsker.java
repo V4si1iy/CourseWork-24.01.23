@@ -158,7 +158,7 @@ public class WorkerAsker{
                 Console.println("Введите отдел:");
                 Console.print(App.PS2);
                 strDepartment = userScanner.nextLine().trim();
-                department=departments.valueOf(strDepartment);
+                department=departments.valueOf(strDepartment.toUpperCase());
                 break;
             } catch (NoSuchElementException exception) {
                 Console.printerror("Отдел не распознан!");
@@ -185,8 +185,7 @@ public class WorkerAsker{
                 Console.println("Введите статус :");
                 Console.print(App.PS2);
                 strStatus = userScanner.nextLine().trim();
-
-                stat = Status.valueOf(strStatus);
+                stat = Status.valueOf(strStatus.toUpperCase());
                 break;
             } catch (NoSuchElementException exception) {
                 Console.printerror("Статус не распознано!");

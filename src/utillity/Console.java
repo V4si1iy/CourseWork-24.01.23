@@ -89,6 +89,12 @@ public class Console {
             case "sort":
                 if (!commandManager.sort(userCommand[1])) return 1;
                 break;
+            case "greater_then_number":
+                if(!commandManager.greaterThenNumber(userCommand[1])) return 1;
+                break;
+            case "less_then_number":
+                if(!commandManager.lessThenNumber(userCommand[1])) return 1;
+                break;
             case "exit":
                 if (!commandManager.exit(userCommand[1])) return 1;
                 else return 2;

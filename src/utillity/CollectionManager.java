@@ -148,13 +148,44 @@ public class CollectionManager {
         return info;
     }
 
+    /**
+     * Salary that greater of number .
+     *
+     * @return List of workers with greater salary
+     */
+    public String greaterSalary(Long salary) {
+        String info = "";
+        for (Worker work : workersCollection) {
+            if (work.getSalary() > salary) {
+                info += work;
+                if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n\n";
+            }
+        }
+        return info;
+    }
+    /**
+     * Salary that less of number .
+     *
+     * @return List of workers with less salary
+     */
+    public String lessSalary(Long salary) {
+        String info = "";
+        for (Worker work : workersCollection) {
+            if (work.getSalary() < salary) {
+                info += work;
+                if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n\n";
+            }
+        }
+        return info;
+    }
+
+
 
     /**
      * Get the first letters of workers
      * @return Workers'F.I.O
      */
     public String InitialsToString() {
-        if (workersCollection.isEmpty()) return "Коллекция пуста!";
         String info = "";
         for (Worker work : workersCollection) {
             char secondOfName = work.getSurname().charAt(work.getSurname().indexOf(' ') + 1);

@@ -5,7 +5,6 @@ import exceptions.CollectionEmptyException;
 import exceptions.WrongAmountOfElementsException;
 import utillity.CollectionManager;
 import utillity.Console;
-import utillity.WorkerAsker;
 
 /**
  * Command 'indexing'. Indexing salary of all workers.
