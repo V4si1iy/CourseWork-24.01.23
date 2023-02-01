@@ -103,7 +103,7 @@ public class Worker {
         if (this == obj) return true;
         if (obj instanceof Worker) {
             Worker workObj = (Worker) obj;
-            return name.equals(workObj.getName()) && surname.equals(workObj.getName()) && patronymic.equals(workObj.getName()) &&
+            return name.equals(workObj.getName()) && surname.equals(workObj.getSurname()) && patronymic.equals(workObj.getPatronymic()) &&
                     (salary == workObj.getSalary()) && status.equals(workObj.getStatus()) && department.equals(workObj.getDepartment());
         }
         return false;

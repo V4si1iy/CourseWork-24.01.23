@@ -110,7 +110,7 @@ public class CollectionManager {
     /**
      * Sort the collection .
      */
-    public void sortCollection() {
+    public void sortCollectionByDepartment() {
         Collections.sort(workersCollection, Comparator.comparing(Worker::getDepartment));
     }
 

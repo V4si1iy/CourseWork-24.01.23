@@ -8,7 +8,7 @@ import utillity.Console;
 import utillity.WorkerAsker;
 
 /**
- * Command 'update'. Updates the information about selected marine.
+ * Command 'update'. Updates the information about selected worker.
  */
 public class UpdateCommand extends AbstractCommand {
     private CollectionManager collectionManager;
@@ -71,7 +71,7 @@ public class UpdateCommand extends AbstractCommand {
         } catch (NumberFormatException exception) {
             Console.printerror("ID должен быть представлен числом!");
         } catch (WorkerNotFoundException exception) {
-            Console.printerror("Солдата с таким ID в коллекции нет!");
+            Console.printerror("Рабочего с таким ID в коллекции нет!");
         }
         return false;
     }

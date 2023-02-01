@@ -8,7 +8,7 @@ import utillity.CollectionManager;
 import utillity.Console;
 
 /**
- * Command 'update'. Updates the information about selected marine.
+ * Command 'sort'. Sort collection.
  */
 public class SortCommand extends AbstractCommand {
     private CollectionManager collectionManager;
@@ -28,7 +28,7 @@ public class SortCommand extends AbstractCommand {
         try {
             if (argument.isEmpty()) throw new WrongAmountOfElementsException();
             if (collectionManager.collectionSize() == 0) throw new CollectionEmptyException();
-            collectionManager.sortCollection();
+            collectionManager.sortCollectionByDepartment();
             Console.println("Коллекция успешно отсортирована!");
             return true;
         } catch (WrongAmountOfElementsException exception) {
