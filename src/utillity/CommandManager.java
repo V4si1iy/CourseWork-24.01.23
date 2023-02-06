@@ -203,7 +203,7 @@ public class CommandManager {
      * @return Command exit status.
      */
     public boolean maxSalary(String argument) {
-        return sumOfSalaryCommand.execute(argument);
+        return maxSalaryCommand.execute(argument);
     }
 
     /**
@@ -213,7 +213,7 @@ public class CommandManager {
      * @return Command exit status.
      */
     public boolean minSalary(String argument) {
-        return sumOfSalaryCommand.execute(argument);
+        return minSalaryCommand.execute(argument);
     }
 
     /**
