@@ -30,6 +30,7 @@ public class LessThenNumberCommand extends AbstractCommand {
             Long salary = Long.parseLong(argument);
             String info = collectionManager.lessSalary(salary);
             if(info == "") throw new WorkerNotFoundException();
+            Console.println(info);
             return true;
         } catch (WrongAmountOfElementsException exception) {
             Console.println("Использование: '" + getName() + "'");

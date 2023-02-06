@@ -37,7 +37,7 @@ public class UpdateCommand extends AbstractCommand {
             String name = oldWorker.getName();
             String surname = oldWorker.getSurname();
             String patronymic = oldWorker.getPatronymic();
-            Long salary = oldWorker.getSalary();
+            Double salary = oldWorker.getSalary();
             Status status = oldWorker.getStatus();
             departments department = oldWorker.getDepartment();
 

@@ -120,15 +120,15 @@ public class WorkerAsker{
      * Asks a user the worker's salary.
      * @return Worker's salary.
      */
-    public Long askSalary() {
+    public Double askSalary() {
         String strSalary;
-        Long salary;
+        Double salary;
         while (true) {
             try {
                 Console.println("Введите зарплату:");
                 Console.print(App.PS2);
                 strSalary = userScanner.nextLine().trim();
-                salary = Long.parseLong(strSalary);
+                salary = Double.parseDouble(strSalary);
                 if (salary < MIN_SALARY) throw new NotInDeclaredLimitsException();
                 break;
             } catch (NoSuchElementException exception) {

@@ -158,9 +158,10 @@ public class CollectionManager {
         for (Worker work : workersCollection) {
             if (work.getSalary() > salary) {
                 info += work;
-                if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n\n";
+                info += "\n\n";
             }
         }
+        info = info.substring(0,info.length()-2);
         return info;
     }
     /**
@@ -173,9 +174,10 @@ public class CollectionManager {
         for (Worker work : workersCollection) {
             if (work.getSalary() < salary) {
                 info += work;
-                if (work != workersCollection.get(workersCollection.size() - 1)) info += "\n\n";
+                info += "\n\n";
             }
         }
+        info = info.substring(0,info.length()-2);
         return info;
     }
 

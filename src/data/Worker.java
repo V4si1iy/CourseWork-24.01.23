@@ -9,11 +9,11 @@ public class Worker {
     private String name;
     private String surname;
     private String patronymic;
-    private Long salary;
+    private Double salary;
     private Status status;
     private departments department;
 
-    public Worker(Long id, String name, String surname, String patronymic, Long salary, Status status, departments department) {
+    public Worker(Long id, String name, String surname, String patronymic, Double salary, Status status, departments department) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -55,11 +55,11 @@ public class Worker {
     /**
      * @return Amount of salary.
      */
-    public Long getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(Long salary) {
+    public void setSalary(Double salary) {
         this.salary= salary;
     }
 

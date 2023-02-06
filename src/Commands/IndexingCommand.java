@@ -30,12 +30,12 @@ public class IndexingCommand extends AbstractCommand {
 
             Long percent = Long.parseLong(argument);
             Worker workerInfo;
-            for (Long i = 0L; collectionManager.collectionSize() > i; i++) {
+            for (Long i = 1L; collectionManager.collectionSize() >= i; i++) {
                 workerInfo = collectionManager.getById(i);
                 workerInfo.setSalary(workerInfo.getSalary() + workerInfo.getSalary()*percent / 100);
             }
 
-            Console.println("Работник успешно изменен!");
+            Console.println("Работники успешно изменены!");
             return true;
         } catch (WrongAmountOfElementsException exception) {
             Console.println("Использование: '" + getName() + "'");
