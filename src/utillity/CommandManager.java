@@ -90,7 +90,7 @@ public class CommandManager {
 
     public boolean workingCommand(Command command , String[] userCommand)
     {
-        if(command.equals(null)) {
+        if(command==null) {
             isCommandExists(userCommand[0]);
             return false;
         }
