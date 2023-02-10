@@ -48,14 +48,7 @@ public class Console {
      * @return Exit code.
      */
     private int launchCommand(String[] userCommand) {
-
-        Command method;
-        method= commandManager.getCollectionCommands().get(userCommand[0]);
-        if(method == null){
-            commandManager.isCommandExists(userCommand[0]);
-            return 1;
-        }
-        if(!method.execute(userCommand[1]) && !userCommand[0].equals("exit")){return 1;}
+        if(!commandManager.workingCommand(commandManager.getCollectionCommands().get(userCommand[0]) ,userCommand)){return 1;}
         if(userCommand[0].equals("exit")){return 2;}
         return 0;
     }

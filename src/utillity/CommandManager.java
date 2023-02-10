@@ -80,12 +80,25 @@ public class CommandManager {
         ArrayList<Command> values = new ArrayList<>(commands.values());
         return values;
     }
-
+    /**
+     * @return Map of manager's commands.
+     */
     public HashMap<String, Command> getCollectionCommands() {
         return commands;
     }
 
 
+    public boolean workingCommand(Command command , String[] userCommand)
+    {
+        if(command.equals(null)) {
+            isCommandExists(userCommand[0]);
+            return false;
+        }
+        if(command.execute(userCommand[1]))
+            return true;
+        else
+            return false;
+    }
     /**
      * Prints that command is not found.
      *
