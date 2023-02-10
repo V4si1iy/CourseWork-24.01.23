@@ -35,6 +35,7 @@ public class IndexingCommand extends AbstractCommand {
                 workerInfo.setSalary(workerInfo.getSalary() + workerInfo.getSalary()*percent / 100);
             }
 
+
             Console.println("Работники успешно изменены!");
             return true;
         } catch (WrongAmountOfElementsException exception) {

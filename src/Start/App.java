@@ -18,26 +18,7 @@ public class App {
 
             WorkerAsker workerAsker = new WorkerAsker(userScanner);
             CollectionManager collectionManager = new CollectionManager();
-            CommandManager commandManager = new CommandManager(
-                    new HelpCommand(),
-                    new ShowCommand(collectionManager),
-                    new AddCommand(collectionManager, workerAsker),
-                    new UpdateCommand(collectionManager, workerAsker),
-                    new RemoveByIdCommand(collectionManager),
-                    new ExitCommand(),
-                    new SumOfSalaryCommand(collectionManager),
-                    new ClearCommand(collectionManager),
-                    new SortCommand(collectionManager),
-                    new MaxSalaryCommand(collectionManager),
-                    new MinSalaryCommand(collectionManager),
-                    new AverageSalaryCommand(collectionManager),
-                    new InitialsCommand(collectionManager),
-                    new IndexingCommand(collectionManager),
-                    new GreaterThenNumberCommand(collectionManager),
-                    new LessThenNumberCommand(collectionManager)
-            );
-
-
+            CommandManager commandManager = new CommandManager(collectionManager, workerAsker);
             Console console = new Console(commandManager, userScanner, workerAsker);
 
             console.interactiveMode();

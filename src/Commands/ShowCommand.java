@@ -4,6 +4,7 @@ import exceptions.WrongAmountOfElementsException;
 import utillity.CollectionManager;
 import utillity.Console;
 
+
 /**
  * Command 'show'. Shows information about all elements of the collection.
  */

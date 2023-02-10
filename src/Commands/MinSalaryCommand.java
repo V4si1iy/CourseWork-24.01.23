@@ -25,8 +25,8 @@ public class MinSalaryCommand extends AbstractCommand {
     public boolean execute(String argument) {
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
-            Worker minSalary = collectionManager.minSalaryAll();
             if (collectionManager.getCollection().isEmpty()) throw new CollectionEmptyException();
+            Worker minSalary = collectionManager.minSalaryAll();
             Console.println("Рабочий с минимальной зарпалтой: " + minSalary);
             return true;
         } catch (WrongAmountOfElementsException exception) {

@@ -29,7 +29,7 @@ public class LessThenNumberCommand extends AbstractCommand {
             if (collectionManager.collectionSize() == 0) throw new CollectionEmptyException();
             Long salary = Long.parseLong(argument);
             String info = collectionManager.lessSalary(salary);
-            if(info == "") throw new WorkerNotFoundException();
+            if(info.equals("")) throw new WorkerNotFoundException();
             Console.println(info);
             return true;
         } catch (WrongAmountOfElementsException exception) {

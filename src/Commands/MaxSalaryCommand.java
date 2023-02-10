@@ -25,8 +25,8 @@ public class MaxSalaryCommand extends AbstractCommand {
     public boolean execute(String argument) {
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
-            Worker maxSalary = collectionManager.maxSalaryAll();
             if (collectionManager.getCollection().isEmpty()) throw new CollectionEmptyException();
+            Worker maxSalary = collectionManager.maxSalaryAll();
             Console.println("Рабочий с максимальной зарпалтой: " + maxSalary);
             return true;
         } catch (WrongAmountOfElementsException exception) {

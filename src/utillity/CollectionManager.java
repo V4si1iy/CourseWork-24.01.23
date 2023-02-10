@@ -1,13 +1,15 @@
 package utillity;
 import java.util.*;
+
+import Commands.Command;
 import data.Worker;
+
 
 /**
  * Operates the collection itself.
  */
 public class CollectionManager {
     private ArrayList<Worker> workersCollection = new ArrayList();
-
 
     public CollectionManager() {
 
@@ -181,8 +183,6 @@ public class CollectionManager {
         return info;
     }
 
-
-
     /**
      * Get the first letters of workers
      * @return Workers'F.I.O
@@ -203,6 +203,8 @@ public class CollectionManager {
         }
         return info;
     }
+
+
 
     @Override
     public String toString() {

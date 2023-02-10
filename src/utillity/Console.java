@@ -3,6 +3,7 @@ package utillity;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+import Commands.Command;
 import Start.App;
 
 /**
@@ -47,60 +48,15 @@ public class Console {
      * @return Exit code.
      */
     private int launchCommand(String[] userCommand) {
-        switch (userCommand[0]) {
-            case "":
-                break;
-            case "help":
-                if (!commandManager.help(userCommand[1])) return 1;
-                break;
-            case "show":
-                if (!commandManager.show(userCommand[1])) return 1;
-                break;
-            case "add":
-                if (!commandManager.add(userCommand[1])) return 1;
-                break;
-            case "update":
-                if (!commandManager.update(userCommand[1])) return 1;
-                break;
-            case "remove_by_id":
-                if (!commandManager.removeById(userCommand[1])) return 1;
-                break;
-            case "indexing":
-                if (!commandManager.indexing(userCommand[1])) return 1;
-                break;
-            case "clear":
-                if (!commandManager.clear(userCommand[1])) return 1;
-                break;
-            case "sum_of_salary":
-                if (!commandManager.sumOfSalary(userCommand[1])) return 1;
-                break;
-            case "min_salary":
-                if (!commandManager.minSalary(userCommand[1])) return 1;
-                break;
-            case "max_salary":
-                if (!commandManager.maxSalary(userCommand[1])) return 1;
-                break;
-            case "average_salary":
-                if (!commandManager.averageSalary(userCommand[1])) return 1;
-                break;
-            case "initials":
-                if (!commandManager.initials(userCommand[1])) return 1;
-                break;
-            case "sort":
-                if (!commandManager.sort(userCommand[1])) return 1;
-                break;
-            case "greater_then_number":
-                if(!commandManager.greaterThenNumber(userCommand[1])) return 1;
-                break;
-            case "less_then_number":
-                if(!commandManager.lessThenNumber(userCommand[1])) return 1;
-                break;
-            case "exit":
-                if (!commandManager.exit(userCommand[1])) return 1;
-                else return 2;
-            default:
-                if (!commandManager.noSuchCommand(userCommand[0])) return 1;
+
+        Command method;
+        method= commandManager.getCollectionCommands().get(userCommand[0]);
+        if(method == null){
+            commandManager.isCommandExists(userCommand[0]);
+            return 1;
         }
+        if(!method.execute(userCommand[1]) && !userCommand[0].equals("exit")){return 1;}
+        if(userCommand[0].equals("exit")){return 2;}
         return 0;
     }
 

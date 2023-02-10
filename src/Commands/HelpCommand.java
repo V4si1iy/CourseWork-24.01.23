@@ -1,7 +1,11 @@
 package Commands;
 
 import exceptions.WrongAmountOfElementsException;
+import utillity.CommandManager;
 import utillity.Console;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Command 'help'. It's here just for logical structure.
@@ -18,6 +22,7 @@ public class HelpCommand extends AbstractCommand {
      */
     @Override
     public boolean execute(String argument) {
+
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
             return true;
@@ -26,4 +31,5 @@ public class HelpCommand extends AbstractCommand {
         }
         return false;
     }
+
 }
