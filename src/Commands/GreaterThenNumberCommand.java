@@ -29,7 +29,7 @@ public class GreaterThenNumberCommand extends AbstractCommand {
             if (collectionManager.collectionSize() == 0) throw new CollectionEmptyException();
             Long salary = Long.parseLong(argument);
             String info = collectionManager.greaterSalary(salary);
-            if(info.equals("")) throw new WorkerNotFoundException();
+            if(info.isEmpty()) throw new WorkerNotFoundException();
             Console.println(info);
             return true;
         } catch (WrongAmountOfElementsException exception) {

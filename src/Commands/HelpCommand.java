@@ -1,10 +1,7 @@
 package Commands;
 
 import exceptions.WrongAmountOfElementsException;
-import utillity.CommandManager;
 import utillity.Console;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,11 +9,13 @@ import java.util.List;
  */
 public class HelpCommand extends AbstractCommand {
 
+
     public HelpCommand() {
         super("help", "вывести справку по доступным командам");
     }
 
-    /**
+
+/**
      * Executes the command.
      * @return Command exit status.
      */

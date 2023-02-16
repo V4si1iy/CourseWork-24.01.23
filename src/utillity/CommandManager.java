@@ -90,14 +90,14 @@ public class CommandManager {
 
     public boolean workingCommand(Command command , String[] userCommand)
     {
-        if(command==null) {
-            isCommandExists(userCommand[0]);
-            return false;
+        if(isCommandExists(userCommand[0], command)) {
+            if(command.execute(userCommand[1]))
+                return true;
+            else
+                return false;
         }
-        if(command.execute(userCommand[1]))
-            return true;
-        else
-            return false;
+        return false;
+
     }
     /**
      * Prints that command is not found.
@@ -105,9 +105,11 @@ public class CommandManager {
      * @param command Command, which is not found.
      * @return Command exit status.
      */
-    public boolean isCommandExists(String command) {
-        Console.println("Команда '" + command + "' не найдена. Наберите 'help' для справки.");
-        return false;
+    public boolean isCommandExists(String info, Command command) {
+        if(commands.containsValue(command))
+            return true;
+        Console.println("Команда '" + info + "' не найдена. Наберите 'help' для справки.");
+        return false ;
     }
 
     @Override

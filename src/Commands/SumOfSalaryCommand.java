@@ -23,7 +23,9 @@ public class SumOfSalaryCommand extends AbstractCommand {
     @Override
     public boolean execute(String argument) {
         try {
-            if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
+            if (!argument.isEmpty()) {
+                throw new WrongAmountOfElementsException();
+            }
             double sum_of_salary = collectionManager.getSumOfSalary();
             if (sum_of_salary == 0) throw new CollectionEmptyException();
             Console.println("Сумма зарплат всех рабочих: " + sum_of_salary);
